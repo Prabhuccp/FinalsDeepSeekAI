@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-duo-chat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai-duo-chat
+  template:
+    metadata:
+      labels:
+        app: ai-duo-chat
+    spec:
+      containers:
+      - name: ai-duo-chat
+        image: prabhu832/ai-duo-chat:latest
+        ports:
+        - containerPort: 8080
